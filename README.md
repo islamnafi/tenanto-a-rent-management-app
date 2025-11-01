@@ -13,12 +13,12 @@ Tenanto is a lightweight, single-user Tenant and Rent Tracker web application bu
 
 - **Tenant Rent Log** – Month-by-month rent history  
   <p align="center">
-  <img src="Screenshots/rent-log.jpg" alt="Screenshot 1" width="70%"/>
+  <img src="Screenshots/rent-log.png" alt="Screenshot 1" width="70%"/>
 </p>
 
 - **Add Rent Form** – Add new rent records easily  
   <p align="center">
-  <img src="Screenshots/add-rent.jpg" alt="Screenshot 1" width="70%"/>
+  <img src="Screenshots/add-rent.png" alt="Screenshot 1" width="70%"/>
 </p>
 
 ---
