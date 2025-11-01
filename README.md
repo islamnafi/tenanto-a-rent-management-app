@@ -1,7 +1,6 @@
 # Tenanto — Tenant & Rent Tracker
 
-**Tenanto** is a lightweight, single-user **Tenant and Rent Tracker** web application built with **ASP.NET Core MVC 8** and **C#**.  
-It’s designed for individual landlords who want to track tenants and monthly rent records **without needing authentication or multi-user support**.
+Tenanto is a lightweight, single-user Tenant and Rent Tracker web application built with ASP.NET Core MVC 8 and C#. It’s designed for individual landlords who want to track tenants and monthly rent records without needing authentication or multi-user support.
 
 ---
 
@@ -9,21 +8,18 @@ It’s designed for individual landlords who want to track tenants and monthly r
 
 - **Dashboard** – View and manage tenants  
   <p align="center">
-  <img src="CSE213_Project/Screenshots/1.jpg" alt="Screenshot 1" width="45%"/>
+  <img src="tenanto-a-rent-management-app/blob/main/Screenshots/add-rent.png" alt="Screenshot 1" width="70%"/>
 </p>
-  ![Dashboard](#)
 
 - **Tenant Rent Log** – Month-by-month rent history  
   <p align="center">
   <img src="CSE213_Project/Screenshots/1.jpg" alt="Screenshot 1" width="45%"/>
 </p>
-  ![Rent Log](#)
 
 - **Add Rent Form** – Add new rent records easily  
   <p align="center">
   <img src="CSE213_Project/Screenshots/1.jpg" alt="Screenshot 1" width="45%"/>
 </p>
-  ![Add Rent](#)
 
 ---
 
@@ -70,9 +66,6 @@ Tenanto/
 ├── Startup.cs
 └── Tenanto.sln
 
-
----
-
 ## Setup Instructions
 
 ### 1. Prerequisites
@@ -81,13 +74,11 @@ Make sure you have:
 - [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
----
 
 ### 2. Database Setup
 1. Open SQL Server Management Studio (SSMS).  
 2. Run SQL script to create the database and tables:
 
----
 
 ### 3. Configure Connection String
 In `appsettings.json`, update the connection string to match your local SQL Server instance:
@@ -97,15 +88,12 @@ In `appsettings.json`, update the connection string to match your local SQL Serv
 }
 ```
 
----
-
 ### 4. Run the Application
 
 1. Open the `Tenanto.sln` file in Visual Studio.
 2. Press **F5** or click **Start Debugging**.
 3. The Kestrel server will launch and open the app in your default browser.
 
----
 
 ## How It Works
 
@@ -113,7 +101,6 @@ In `appsettings.json`, update the connection string to match your local SQL Serv
 * **Rent Log:** Shows detailed rent history per tenant (base rent, bills, total rent, payment status).
 * **Add Rent Form:** Lets you add new monthly rent entries, with client-side validation and total rent auto-calculation.
 
----
 
 ## Example Data Flow
 
@@ -122,7 +109,6 @@ In `appsettings.json`, update the connection string to match your local SQL Serv
 3. Clicks **"Add New Rent Record"** → fills in rent details → saves.
 4. Data gets stored in the `RentRecords` table via EF Core.
 
----
 
 ## Author
 
