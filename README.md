@@ -8,7 +8,7 @@ Tenanto is a lightweight, single-user Tenant and Rent Tracker web application bu
 
 - **Dashboard** – View and manage tenants  
   <p align="center">
-  <img src="tenanto-a-rent-management-app/blob/main/Screenshots/add-rent.png" alt="Screenshot 1" width="70%"/>
+  <img src="Screenshots/add-rent.png" alt="Screenshot 1" width="70%"/>
 </p>
 
 - **Tenant Rent Log** – Month-by-month rent history  
