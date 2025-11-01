@@ -2,8 +2,6 @@
 
 Tenanto is a lightweight, single-user Tenant and Rent Tracker web application built with ASP.NET Core MVC 8 and C#. It’s designed for individual landlords who want to track tenants and monthly rent records without needing authentication or multi-user support.
 
----
-
 ## Screenshots
 
 - **Dashboard** – View and manage tenants  
@@ -21,7 +19,6 @@ Tenanto is a lightweight, single-user Tenant and Rent Tracker web application bu
   <img src="Screenshots/add-rent.png" alt="Screenshot 1" width="70%"/>
 </p>
 
----
 
 ## Features
 
@@ -34,8 +31,6 @@ Tenanto is a lightweight, single-user Tenant and Rent Tracker web application bu
 - **Entity Framework Core (EF Core)** for database interaction  
 - **SQL Server** backend for structured, reliable data storage  
 
----
-
 ## Tech Stack
 
 | Layer | Technology |
@@ -45,7 +40,6 @@ Tenanto is a lightweight, single-user Tenant and Rent Tracker web application bu
 | **Database** | Microsoft SQL Server |
 | **ORM** | Entity Framework Core |
 
----
 
 ## Project Structure
 
