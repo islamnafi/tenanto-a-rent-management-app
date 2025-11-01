@@ -1,0 +1,56 @@
+﻿@model tenanto.Models.Tenant
+@{
+    ViewData["Title"] = $"Rent Log for {Model.Name}";
+}
+
+<h1>Rent Log: @Model.Name (Room @Model.RoomNumber)</h1>
+
+<p>
+    <a asp-action="AddRent" asp-controller="Home" asp-route-tenantId="@Model.TenantId"
+       class="btn btn-success">
+        + Add New Rent Record
+    </a>
+</p>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Month</th>
+            <th>Year</th>
+            <th>Base Rent</th>
+            <th>Electricity</th>
+            <th>Water</th>
+            <th>Gas</th>
+            <th>Service Charge</th>
+            <th>Total Rent</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model.RentRecords)
+        {
+            <tr>
+                <td>@record.Month</td>
+                <td>@record.Year</td>
+
+                <td>BDT @(record.BaseRent.ToString("N2"))</td>
+                <td>BDT @(record.ElectricityBill?.ToString("N2"))</td>
+                <td>BDT @(record.WaterBill?.ToString("N2"))</td>
+                <td>BDT @(record.GasBill?.ToString("N2"))</td>
+                <td>BDT @(record.ServiceCharge?.ToString("N2"))</td>
+                <td><strong>BDT @(record.TotalRent.ToString("N2"))</strong></td>
+
+                <td>
+                    @if (record.Status == "Paid")
+                    {
+                        <span class="badge bg-success">Paid</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Due</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

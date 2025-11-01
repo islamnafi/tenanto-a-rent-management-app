@@ -1,0 +1,120 @@
+﻿@model tenanto.Models.RentRecord
+@{
+    ViewData["Title"] = "Add Rent Record";
+}
+
+<h1>Add Rent Record</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddRent">
+            <input type="hidden" asp-for="TenantId" />
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Month" class="form-label"></label>
+                    <input asp-for="Month" class="form-control" type="number" />
+                    <span asp-validation-for="Month" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Year" class="form-label"></label>
+                    <input asp-for="Year" class="form-control" type="number" />
+                    <span asp-validation-for="Year" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="BaseRent" class="form-label"></label>
+                <input asp-for="BaseRent" class="form-control" id="baseRent" />
+                <span asp-validation-for="BaseRent" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="ElectricityBill" class="form-label"></label>
+                    <input asp-for="ElectricityBill" class="form-control bill" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="WaterBill" class="form-label"></label>
+                    <input asp-for="WaterBill" class="form-control bill" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="GasBill" class="form-label"></label>
+                    <input asp-for="GasBill" class="form-control bill" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="ServiceCharge" class="form-label"></label>
+                    <input asp-for="ServiceCharge" class="form-control bill" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="TotalRent" class="form-label"></label>
+                <input asp-for="TotalRent" class="form-control" id="totalRent" readonly />
+                <span asp-validation-for="TotalRent" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Status" class="form-label"></label>
+                <select asp-for="Status" class="form-select">
+                    <option value="Due">Due</option>
+                    <option value="Paid">Paid</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save Record" class="btn btn-primary" />
+                <a asp-action="TenantDetails" asp-route-id="@Model.TenantId" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        // This script auto-calculates the total rent
+        (function() {
+            // Select all the bill input fields
+            const billInputs = document.querySelectorAll('.bill');
+            const baseRentInput = document.getElementById('baseRent');
+            const totalRentInput = document.getElementById('totalRent');
+
+            function calculateTotal() {
+                let total = 0;
+
+                // Add base rent
+                let baseRent = parseFloat(baseRentInput.value) || 0;
+                total += baseRent;
+
+                // Add all other bills
+                billInputs.forEach(function(input) {
+                    let billValue = parseFloat(input.value) || 0;
+                    total += billValue;
+                });
+
+                // Set the total rent input value
+                totalRentInput.value = total.toFixed(2);
+            }
+
+            // Add event listeners to all inputs to recalculate on change
+            baseRentInput.addEventListener('input', calculateTotal);
+            billInputs.forEach(function(input) {
+                input.addEventListener('input', calculateTotal);
+            });
+
+            // Calculate on page load
+            calculateTotal();
+        })();
+    </script>
+}

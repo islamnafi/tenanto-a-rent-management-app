@@ -1,0 +1,33 @@
+﻿@model IEnumerable<tenanto.Models.Tenant>
+@{
+    ViewData["Title"] = "Tenant Dashboard";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Shanti Nibash Dashboard</h1>
+</div>
+
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Tenant Name</th>
+            <th>Room Number</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tenant in Model)
+        {
+            <tr>
+                <td>@tenant.Name</td>
+                <td>@tenant.RoomNumber</td>
+                <td>
+                    <a asp-action="TenantDetails" asp-controller="Home" asp-route-id="@tenant.TenantId"
+                       class="btn btn-primary">
+                        View Rent Log
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
