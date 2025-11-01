@@ -43,7 +43,7 @@ Tenanto is a lightweight, single-user Tenant and Rent Tracker web application bu
 
 ## Project Structure
 
-
+```
 Tenanto/
 ├── Controllers/
 │   └── HomeController.cs
@@ -59,6 +59,7 @@ Tenanto/
 ├── Program.cs
 ├── Startup.cs
 └── Tenanto.sln
+```
 
 ## Setup Instructions
 
