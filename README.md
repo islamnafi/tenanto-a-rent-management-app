@@ -1,4 +1,4 @@
-```markdown
+```
 # Tenanto — Tenant & Rent Tracker
 
 **Tenanto** is a lightweight, single-user **Tenant and Rent Tracker** web application built with **ASP.NET Core MVC 8** and **C#**.  
@@ -54,7 +54,7 @@ It’s designed for individual landlords who want to track tenants and monthly r
 
 ## Project Structure
 
-```
+
 Tenanto/
 ├── Controllers/
 │   └── HomeController.cs
@@ -70,7 +70,7 @@ Tenanto/
 ├── Program.cs
 ├── Startup.cs
 └── Tenanto.sln
-```
+
 
 ---
 
@@ -96,7 +96,7 @@ In `appsettings.json`, update the connection string to match your local SQL Serv
 "ConnectionStrings": {
   "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=TenantoDB;Trusted_Connection=True;TrustServerCertificate=True;"
 }
-```
+
 
 ---
 
