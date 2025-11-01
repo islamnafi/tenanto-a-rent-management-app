@@ -22,11 +22,8 @@ Tenanto is a lightweight, single-user Tenant and Rent Tracker web application bu
 
 ## Features
 
-- **Single landlord mode** — No login or registration required  
 - **Tenant management** — View all tenants in one dashboard  
 - **Rent records tracking** — Month-by-month rent details per tenant  
-- **Automatic total rent calculation** — Done via small vanilla JS snippet  
-- **Bangladeshi Taka (BDT)** currency formatting throughout  
 - **Built with Bootstrap** for a clean, responsive UI  
 - **Entity Framework Core (EF Core)** for database interaction  
 - **SQL Server** backend for structured, reliable data storage  
